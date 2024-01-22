@@ -1,0 +1,25 @@
+.container {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  background-color: lightblue;
+  height: 60px;
+}
+
+.process {
+  display: flex;
+  flex-direction: row;
+}
+.processdetail {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: lightpink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
