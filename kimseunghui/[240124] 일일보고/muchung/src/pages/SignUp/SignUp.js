@@ -1,27 +1,3 @@
-/** @jsxImportSource @emotion/react */
-import { css } from "@emotion/react";
-import * as React from "react";
-import { Outlet } from "react-router-dom";
-
-function PersonalInfo() {
-  return (
-    <div css={containerStyles}>
-      <div>
-        <h1 className="header">입사지원</h1>
-      </div>
-      <Outlet></Outlet>
-    </div>
-  );
-}
-
-export default PersonalInfo;
-
-const containerStyles = css`
-  height: 100vh;
-
-  .header {
-    text-align: center;
-    font-size: 40px;
-    margin: 50px 0px;
-  }
-`;
+version https://git-lfs.github.com/spec/v1
+oid sha256:92b1ad9db4b54becd2fc605c1e626c4851ee1257967380b038518ad2561be9f5
+size 603
