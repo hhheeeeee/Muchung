@@ -1,13 +1,3 @@
-package ssafy.muchung.global.exception;
-
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.RestControllerAdvice;
-
-@RestControllerAdvice
-public class GlobalExceptionHandler {
-
-    @ExceptionHandler(BaseException.class)
-    public ErrorResponse handleRuntimeException(BaseException exception) {
-        return new ErrorResponse(exception);
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:b3d89e65c1aa158a305f816d06e379368fd943390971db6cc72af3f8110e0fa6
+size 1130
