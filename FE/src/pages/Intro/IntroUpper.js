@@ -1,13 +1,12 @@
 /** @jsxImportSource @emotion/react */
-import { useNavigate } from "react-router-dom";
 import { css } from "@emotion/react";
-import logontext from "./../../assets/logontext.png";
-import growth from "./../../assets/introbackground.png";
-import { gsap } from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
 
 function IntroUpper() {
-  return <div css={containerStyles}></div>;
+  return (
+    <div css={containerStyles}>
+      <p>무청컴퍼니에서 당신을..뽑습니다...</p>
+    </div>
+  );
 }
 
 export default IntroUpper;
