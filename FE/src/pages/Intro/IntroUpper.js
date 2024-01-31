@@ -1,14 +1,3 @@
-/** @jsxImportSource @emotion/react */
-import { css } from "@emotion/react";
-
-function IntroUpper() {
-  return (
-    <div css={containerStyles}>
-      <p>무청컴퍼니에서 당신을..뽑습니다...</p>
-    </div>
-  );
-}
-
-export default IntroUpper;
-
-const containerStyles = css``;
+version https://git-lfs.github.com/spec/v1
+oid sha256:34176a06dad89e36d48180e48d76caff0851123ea9ac6f109e581b5285ec54b1
+size 1667
