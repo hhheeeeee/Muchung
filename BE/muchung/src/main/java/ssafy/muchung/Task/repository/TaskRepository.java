@@ -1,15 +1,3 @@
-package ssafy.muchung.task.repository;
-
-import java.time.LocalDate;
-import java.util.List;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
-
-import ssafy.muchung.task.entity.Task;
-
-@Repository
-public interface TaskRepository extends JpaRepository<Task, Long> {
-
-	List<Task> findByMemberIdAndTaskDate(Long member_id, LocalDate taskDate);
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:1a4bbb1eb42daad10fd5b1223807dc4595b09d70ce482085dc1e46739a9390cd
+size 515
