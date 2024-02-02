@@ -1,13 +1,3 @@
-package ssafy.muchung.report.repository;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
-
-import ssafy.muchung.report.entity.Report;
-
-@Repository
-public interface ReportRepository extends JpaRepository<Report, Long> {
-
-	Report findByIdAndMemberId(Long reportId, Long memberId);
-
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:af230d7420cc449f2cb5614b8c6a7ee64cbda8195b57c2f91a322c0134e92582
+size 606
