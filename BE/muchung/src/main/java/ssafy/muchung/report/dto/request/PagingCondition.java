@@ -10,9 +10,9 @@ import lombok.ToString;
 public class PagingCondition {
 	/*  반환 size - 필수
 	 * */
-	private Long limit;
+	private Integer limit;
 
 	/*  페이지 번호 - option - default 0
 	 * */
-	private long pageNumber;
+	private int page;
 }
