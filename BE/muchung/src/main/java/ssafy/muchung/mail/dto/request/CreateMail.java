@@ -15,5 +15,5 @@ import ssafy.muchung.mail.entity.Mail;
 public class CreateMail {
 	private String title;
 	private String content;
-	private String receiverEmail;
+	private Long receiverId;
 }
