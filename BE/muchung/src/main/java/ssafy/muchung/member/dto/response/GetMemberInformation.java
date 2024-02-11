@@ -8,7 +8,9 @@ import lombok.Getter;
 public class GetMemberInformation {
 	private String name;
 	private String profileImage;
-	private Long departmentId;
 	private String departmentName;
+	private String email;
+	private String phone;
+	private String description;
 	private int nDays;
 }
