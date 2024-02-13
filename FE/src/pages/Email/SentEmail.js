@@ -1,19 +1,3 @@
-/** @jsxImportSource @emotion/react */
-import { css } from "@emotion/react";
-import { Outlet } from "react-router-dom";
-
-const SentEmail = () => {
-  return <div css={container}>보낸메일</div>;
-};
-
-export default SentEmail;
-
-const container = css`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
-  background-color: pink;
-`;
+version https://git-lfs.github.com/spec/v1
+oid sha256:5fc13d41558c0bed1d2c1c100da9f838cc5bd01fb10f21b924f26c41766172e1
+size 7286
