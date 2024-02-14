@@ -10,12 +10,14 @@ public class MemberDto {
 	private Long id;
 	private String name;
 	private String image;
+	private String email;
 
 	public static MemberDto fromEntity(Member member) {
 		return MemberDto.builder()
-			.id(member.getId())
-			.name(member.getName())
-			.image(member.getProfileImage())
-			.build();
+				.id(member.getId())
+				.name(member.getName())
+				.image(member.getProfileImage())
+				.email(member.getEmail())
+				.build();
 	}
 }
