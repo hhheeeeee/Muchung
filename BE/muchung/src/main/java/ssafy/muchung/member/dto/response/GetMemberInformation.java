@@ -6,6 +6,7 @@ import lombok.Getter;
 @Builder
 @Getter
 public class GetMemberInformation {
+	private Long id;
 	private String name;
 	private String profileImage;
 	private String departmentName;
