@@ -1,23 +1,3 @@
-package ssafy.muchung.member.dto;
-
-import lombok.Builder;
-import lombok.Getter;
-import ssafy.muchung.member.entity.Member;
-
-@Getter
-@Builder
-public class MemberDto {
-	private Long id;
-	private String name;
-	private String image;
-	private String email;
-
-	public static MemberDto fromEntity(Member member) {
-		return MemberDto.builder()
-				.id(member.getId())
-				.name(member.getName())
-				.image(member.getProfileImage())
-				.email(member.getEmail())
-				.build();
-	}
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:0639c8375c1e89fa343e1c8c7b58bd8960ec6a63439c5b5e01c768550224378e
+size 551
