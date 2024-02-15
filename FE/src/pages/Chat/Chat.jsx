@@ -7,8 +7,7 @@ import ChatContent from './ChatContent';
 function Chat() {
   return (
     <div>
-      야이바보
-      <ChatContent></ChatContent>
+      <ChatContent />
     </div>
   );
 }
