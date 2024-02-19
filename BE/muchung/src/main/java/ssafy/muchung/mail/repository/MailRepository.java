@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:048f51e8e28d0cd75cc23f4f1b467e88c57b2ba460871efe2872d5e22532e54d
-size 843
+package ssafy.muchung.mail.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import ssafy.muchung.mail.entity.Mail;
+import ssafy.muchung.member.entity.Member;
+
+@Repository
+public interface MailRepository extends JpaRepository<Mail, Long> {
+
+	List<Mail> findByReceiverAndIsDeleted(Member receiver, Boolean isDeleted);
+
+	List<Mail> findBySenderAndIsDeleted(Member sender, Boolean isDeleted);
+
+	List<Mail> findByReceiverAndIsReadAndIsDeleted(Member receiver, Boolean isRead, Boolean isDeleted);
+
+	List<Mail> findByIsDeleted(Boolean isDeleted);
+
+	List<Mail> findByInterestAndReceiverAndIsDeletedOrInterestAndSenderAndIsDeleted(
+		Boolean interest1, Member receiver, Boolean isDeleted1,
+		Boolean interest2, Member sender, Boolean isDeleted2
+	);
+}

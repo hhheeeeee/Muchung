@@ -1,3 +1,35 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d61315ffb906e9a5fd845b050a3c43cf6133c5c786a099552e0765d3194badf9
-size 1179
+import FirstPage from "./pages/FirstPage";
+import Intro from "./pages/Intro";
+import LogIn from "./pages/LogIn";
+import SignUp from "./pages/SignUp/SignUp";
+import Interview from "./pages/SignUp/Interview";
+import Ncs from "./pages/SignUp/Ncs";
+import SignUpFinal from "./pages/SignUp/SignUpFinal";
+import MainPage from "./pages/MainPage/MainPage";
+import { Routes, Route } from "react-router-dom";
+
+function App() {
+  return (
+    <div>
+      <Routes>
+        {/* 처음 진입 페이지 */}
+        <Route path="/" element={<FirstPage />} />
+        {/* 회사 소개 페이지 */}
+        <Route path="/intro" element={<Intro />} />
+        {/* 회원가입 */}
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/signup/0" element={<Interview />} />
+        <Route path="/signup/1" element={<Ncs />} />
+        <Route path="/signup/2" element={<SignUpFinal />} />
+        {/* <LogIn /> */}
+        <Route path="/login" element={<LogIn />} />
+        {/* 메인페이지 */}
+        <Route path="/main" element={<MainPage />} />
+
+        <Route path="*" element={<div>없는페이지임</div>} />
+      </Routes>
+    </div>
+  );
+}
+
+export default App;

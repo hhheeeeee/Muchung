@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1f2c8db821da9c3fec937cda6db466a29d021b3308a7aa943ffb280c6bc3235a
-size 644
+package ssafy.muchung.recommend.entity;
+
+import lombok.Builder;
+import lombok.Getter;
+import lombok.ToString;
+import ssafy.muchung.member.entity.Member;
+
+import java.time.LocalDate;
+
+@Getter
+@Builder
+@ToString
+public class RecommendDto {
+    private Long id;
+    private String title;
+    private String reason;
+    private LocalDate baseTime;
+
+    public static RecommendDto fromEntity(Recommend recommend) {
+        return RecommendDto.builder()
+            .id(recommend.getId())
+            .title(recommend.getTitle())
+            .reason(recommend.getReason())
+            .baseTime(recommend.getBaseTime())
+            .build();
+    }
+}

@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:81822ff3e53783c625478bb2ad0c46ea0c2cd9090a2807667da3d93155034faf
-size 869
+import { useNavigate } from "react-router-dom";
+import "./../styles/FirstPage.css";
+import logo from "./../assets/logo.png";
+
+function FirstPage() {
+  const navigate = useNavigate();
+  const goToIntro = () => {
+    navigate("/intro");
+  };
+  const goToLogIn = () => {
+    navigate("/LogIn");
+  };
+  return (
+    <div className="container">
+      <header className="navbar">
+        <img src={logo} alt="logo" />
+        <h1>무업청년들</h1>
+      </header>
+      <div className="content">
+        <p className="choose">둘 중 해당하는 곳을 선택해주세요</p>
+        <div>
+          <button className="btn member" onClick={goToLogIn}>
+            사원
+          </button>
+          <button className="btn notmember" onClick={goToIntro}>
+            외부인
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default FirstPage;

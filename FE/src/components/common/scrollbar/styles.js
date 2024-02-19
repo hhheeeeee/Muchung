@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:096ee6a62733addc31b9c1353a2ffc34100457f2d3a88c0ae99f2b5f1a5db854
-size 619
+import SimpleBar from 'simplebar-react';
+
+import { alpha, styled } from '@mui/material/styles';
+
+// ----------------------------------------------------------------------
+
+export const StyledRootScrollbar = styled('div')(() => ({
+  flexGrow: 1,
+  height: '100%',
+  overflow: 'hidden',
+}));
+
+export const StyledScrollbar = styled(SimpleBar)(({ theme }) => ({
+  maxHeight: '100%',
+  '& .simplebar-scrollbar': {
+    '&:before': {
+      backgroundColor: alpha(theme.palette.grey[600], 0.48),
+    },
+    '&.simplebar-visible:before': {
+      opacity: 1,
+    },
+  },
+  '& .simplebar-mask': {
+    zIndex: 'inherit',
+  },
+}));

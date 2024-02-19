@@ -1,3 +1,44 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8f23758f4c6cedd3363474aef50712ab21f0472f629bb29515f9e136c781bc4e
-size 1032
+import PropTypes from 'prop-types';
+import { memo, forwardRef } from 'react';
+
+import Box from '@mui/material/Box';
+
+import { StyledScrollbar, StyledRootScrollbar } from './styles';
+
+// ----------------------------------------------------------------------
+
+const Scrollbar = forwardRef(({ children, sx, ...other }, ref) => {
+  const userAgent = typeof navigator === 'undefined' ? 'SSR' : navigator.userAgent;
+
+  const mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
+
+  if (mobile) {
+    return (
+      <Box ref={ref} sx={{ overflow: 'auto', ...sx }} {...other}>
+        {children}
+      </Box>
+    );
+  }
+
+  return (
+    <StyledRootScrollbar>
+      <StyledScrollbar
+        scrollableNodeProps={{
+          ref,
+        }}
+        clickOnTrack={false}
+        sx={sx}
+        {...other}
+      >
+        {children}
+      </StyledScrollbar>
+    </StyledRootScrollbar>
+  );
+});
+
+Scrollbar.propTypes = {
+  children: PropTypes.node,
+  sx: PropTypes.object,
+};
+
+export default memo(Scrollbar);

@@ -1,3 +1,66 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1a5044c50d29d55ba91081b80a9cd05aeae1105ef10d0faed7d722dc1334d569
-size 855
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
+  border-radius: 10px;
+  width: 500px;
+  height: 280px;
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  box-shadow: 5px 5px 5px gray;
+}
+
+.logo {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h2 {
+  text-align: center;
+  margin: 20px;
+}
+
+.logo {
+  width: 40%;
+}
+
+.inputarea {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  margin: 8px;
+  border-width: 0 0 1px;
+}
+
+input:focus {
+  outline: none;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  margin-right: 5px;
+}
+
+button {
+  border: 0;
+  margin: 10px;
+  width: 150px;
+  height: 35px;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: rgb(211, 211, 211);
+}

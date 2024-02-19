@@ -1,3 +1,36 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e762a04a4ec7d499f62433014dc0b5f677255992417bb9883e3c3a503a21cd13
-size 778
+// /** @jsxImportSource @emotion/react */
+// import { css } from "@emotion/react";
+// // import { useState, useEffect } from "react";
+// // import axios from "axios";
+
+// import { db } from "./firebase";
+// import { collection, getDocs } from "firebase/firestore";
+// import { useEffect } from "react";
+
+// function Todolist() {
+//   useEffect(() => {
+//     console.log(db)
+//   }
+
+//   return (
+//     <div css={container}>
+//       <p>todolist</p>
+//     </div>
+//   );
+// }
+// export default Todolist;
+
+// const container = css`
+//   width: 33%;
+//   height: 100%;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   border: 1px solid red;
+//   border-radius: 10px;
+
+//   .input {
+//     display: none;
+//   }
+// `;

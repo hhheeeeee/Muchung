@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b260f4d4f1114a7671a18546edabf7e7532508ef1f33040e666bd34a491c7330
-size 525
+//store.js
+
+import { configureStore } from "@reduxjs/toolkit";
+
+import taskListSlice from "store/taskListSlice";
+import tokenSlice from "store/tokenSlice";
+import userSlice from "store/userSlice";
+import reviewSlice from "store/reviewSlice";
+
+// 리듀서 내보내기
+const store = configureStore({
+  reducer: {
+    user: userSlice,
+
+    // taskListSlice 추가
+    taskList: taskListSlice,
+
+    // tokenSlice 추가
+    token: tokenSlice,
+
+    // reviewSlice 추가
+    review: reviewSlice,
+  },
+});
+
+export default store;

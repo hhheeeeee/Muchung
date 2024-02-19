@@ -1,3 +1,35 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:882d952236fac7bc1b8cb01fa2ab353a72c166aacc47595f3bb2d16ed26319f0
-size 1009
+import React from 'react';
+import { FeedWrap, Member, UserInfo, Name, Part, Date, UserDetail, Review } from './FeedStyle';
+import Comments from './Comments';
+import Tasks from './Tasks';
+
+function FeedCard({ feed }) {
+  return (
+    <FeedWrap>
+      {/* 유저 정보 (프로필, 이름, 부서) */}
+      <Member type="feed">
+        <img src={feed.member.image} alt="" />
+        <UserInfo>
+          <UserDetail>
+            <Name type="feed">{feed.member.name}</Name>
+            <Part type="feed" dept={feed.member.department}>
+              {feed.member.department}
+            </Part>
+          </UserDetail>
+          <Date type="feed">{feed.reportDate}</Date>
+        </UserInfo>
+      </Member>
+
+      {/* 이미지 */}
+      <Tasks tasks={feed.tasks} />
+
+      {/* 리뷰 */}
+      <Review>{feed.review}</Review>
+
+      {/* 댓글 */}
+      <Comments myLike={feed.myLike} likeCount={feed.likeCount} commentData={feed.comments} reportId={feed.id} />
+    </FeedWrap>
+  );
+}
+
+export default FeedCard;

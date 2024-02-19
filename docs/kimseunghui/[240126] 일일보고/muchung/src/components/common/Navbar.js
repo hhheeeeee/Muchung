@@ -1,3 +1,39 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a432173f4a27a0c5fdc218b070c5bf7664d38b4ea5553479f5910973ad9c46fb
-size 773
+/** @jsxImportSource @emotion/react */
+import { css } from "@emotion/react";
+import SideNavbar from "./SideNavbar";
+import logo from "./../../assets/logontext.png";
+
+function Navbar() {
+  return (
+    <div css={containerStyle} className="container">
+      <div className="menus">
+        <SideNavbar></SideNavbar>
+        <img className="logo" src={logo} alt="" />
+        네브바임^^
+      </div>
+    </div>
+  );
+}
+
+export default Navbar;
+
+const containerStyle = css`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(85, 99, 114);
+  height: 10vh;
+  width: 100%;
+
+  .menus {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    height: 70%;
+  }
+`;

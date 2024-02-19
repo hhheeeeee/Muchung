@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:92b1ad9db4b54becd2fc605c1e626c4851ee1257967380b038518ad2561be9f5
-size 603
+/** @jsxImportSource @emotion/react */
+import { css } from "@emotion/react";
+import { Outlet } from "react-router-dom";
+import logo from "./../../assets/logontext.png";
+
+function PersonalInfo() {
+  return (
+    <div css={containerStyles}>
+      <div>
+        <img className="logo" src={logo} alt="" />
+        <h1 className="header">입사지원</h1>
+      </div>
+      <Outlet></Outlet>
+    </div>
+  );
+}
+
+export default PersonalInfo;
+
+const containerStyles = css`
+  height: 100vh;
+
+  .logo {
+    width: 20%;
+  }
+  .header {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 30px;
+  }
+`;

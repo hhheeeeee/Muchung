@@ -1,3 +1,57 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:36525015c42786a1db9a30719f0cb44c36380d9d54d5445fb7f308f389b1d95d
-size 1306
+/** @jsxImportSource @emotion/react */
+import { useNavigate } from "react-router-dom";
+import { css } from "@emotion/react";
+import logontext from "./../assets/logontext.png";
+
+function Intro() {
+  const navigate = useNavigate();
+  const goToSign = () => {
+    navigate("/signup");
+  };
+
+  const containerStyles = css`
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+  `;
+
+  const headerStyles = css`
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid grey;
+    height: 80px;
+  `;
+
+  const logontextstyle = css`
+    object-fit: contain;
+  `;
+
+  const contentStyles = css`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  `;
+
+  const contentimg = css`
+    width: 30%;
+    background-color: rgb(222, 226, 252);
+  `;
+  return (
+    <div css={containerStyles}>
+      <header css={headerStyles}>
+        <img src={logontext} alt="" css={logontextstyle} />
+      </header>
+      <div css={contentStyles}>
+        <div css={contentimg}>사진1</div>
+        <div css={contentimg}>
+          <p>무청컴퍼니에서</p>
+          <p>신입사원을 모집합니다</p>
+          <button onClick={goToSign}>지원하기</button>
+        </div>
+        <div css={contentimg}>사진2</div>
+      </div>
+    </div>
+  );
+}
+
+export default Intro;

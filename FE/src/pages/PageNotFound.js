@@ -1,3 +1,57 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9a3ed3003758fdc22cbd57dd10d13a9d0d58643fb124d3f3c77901b3fe86b687
-size 1121
+/* eslint-disable */
+/** @jsxImportSource @emotion/react */
+import { useNavigate } from "react-router-dom";
+import { css } from "@emotion/react";
+import img from "assets/pagenotfound.gif";
+
+function PageNotFound() {
+  const navigate = useNavigate();
+
+  const handlebtn = function () {
+    navigate("/");
+  };
+  return (
+    <>
+      <div css={container}>
+        <p className="title">페이지를 찾을 수 없습니다</p>
+        <img src={img} alt="404" />
+        <button className="btn" onClick={handlebtn}>
+          HOME
+        </button>
+      </div>
+    </>
+  );
+}
+
+export default PageNotFound;
+
+const container = css`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fcfcff;
+
+  .title {
+    font-weight: 600;
+    font-size: 2rem;
+    margin: 2rem 0rem;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    background-color: rgb(48, 141, 229);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+
+  .btn:hover {
+    background-color: #1976d2;
+  }
+`;

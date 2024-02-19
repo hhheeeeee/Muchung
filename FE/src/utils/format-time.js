@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9752e3486a63f9e610ba12e9b3edf162fe6a2bbe9ed34e31468c09edcb6e3d3e
-size 636
+import { format, getTime, formatDistanceToNow } from 'date-fns';
+
+// ----------------------------------------------------------------------
+
+export function fDate(date, newFormat) {
+  const fm = newFormat || 'dd MMM yyyy';
+
+  return date ? format(new Date(date), fm) : '';
+}
+
+export function fDateTime(date, newFormat) {
+  const fm = newFormat || 'dd MMM yyyy p';
+
+  return date ? format(new Date(date), fm) : '';
+}
+
+export function fTimestamp(date) {
+  return date ? getTime(new Date(date)) : '';
+}
+
+export function fToNow(date) {
+  return date
+    ? formatDistanceToNow(new Date(date), {
+        addSuffix: true,
+      })
+    : '';
+}

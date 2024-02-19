@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8e45396bddd4caa7157c7204e5512fe9f4d42082d23606378d5e84653882b596
-size 728
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addTask } from "store/taskListSlice";
+
+const AddTaskComponent = (onClose) => {
+  const [task, setTask] = useState("");
+  const dispatch = useDispatch();
+
+  const handleAddTask = () => {
+    if (task.trim() !== "") {
+      dispatch(addTask(task));
+      onClose(); // 모달 닫기
+    }
+
+    return (
+      <div>
+        <h2>업무 등록</h2>
+        <input
+          type="text"
+          placeholder="업무를 입력하세요"
+          value={task}
+          onChange={(e) => setTask(e.target.value)}
+        />
+        <button onClick={handleAddTask}>등록</button>
+      </div>
+    );
+  };
+};
+
+export default AddTaskComponent;

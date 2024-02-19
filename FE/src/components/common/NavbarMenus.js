@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5dc9bce78366b3109c0844ae0fa212d86134254a81261abd4b78050b46b38905
-size 538
+import { Home, Mail, CalendarMonth, Folder } from "@mui/icons-material";
+
+export const NavbarMenus = [
+  {
+    id: 1,
+    link: "/main",
+    icon: <Home />,
+    includes: "main",
+    name: "Home",
+  },
+  {
+    id: 2,
+    link: "/mail",
+    icon: <Mail />,
+    includes: "mail",
+    name: "Email",
+  },
+  {
+    id: 3,
+    link: "/calendar",
+    icon: <CalendarMonth />,
+    includes: "calendar",
+    name: "Calendar",
+  },
+  {
+    id: 4,
+    link: "/report",
+    icon: <Folder />,
+    includes: "report",
+    name: "업무보고",
+  },
+];

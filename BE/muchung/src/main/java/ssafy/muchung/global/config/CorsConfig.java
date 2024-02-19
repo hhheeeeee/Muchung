@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c614d0e62c7510ac40da9bc4d9411f676fc24e7d87b1c417bb26eb29bb19de10
-size 589
+package ssafy.muchung.global.config;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+@Configuration
+public class CorsConfig implements WebMvcConfigurer {
+	private final long MAX_AGE_SECS = 3600;
+
+	@Override
+	public void addCorsMappings(CorsRegistry registry) {
+		registry.addMapping("/**")
+			.allowedOriginPatterns("*")
+			.allowedHeaders("*")
+			.allowedMethods("*")
+			.allowCredentials(true)
+			.maxAge(MAX_AGE_SECS);
+	}
+
+}

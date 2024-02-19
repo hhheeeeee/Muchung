@@ -1,3 +1,39 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b84e323f9b78bb9abd4e8e2065e7f55d831f6406a282879fcb0340bb07fd40a3
-size 1422
+package ssafy.muchung.notification.repository;
+
+import org.springframework.stereotype.Repository;
+import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
+
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.stream.Collectors;
+
+@Repository
+public class EmitterRepository {
+    private final Map<String, SseEmitter> sseEmitters = new ConcurrentHashMap<>();
+    private final Map<String, Object> eventCache = new ConcurrentHashMap<>();
+
+    public SseEmitter save(String emitterId, SseEmitter sseEmitter){
+        sseEmitters.put(emitterId, sseEmitter);
+        return sseEmitter;
+    }
+
+    public void saveEventCache(String eventCacheId, Object object){
+        eventCache.put(eventCacheId, object);
+    }
+
+    public Map<String, SseEmitter> findAllEmittersByMemberId(String memberId){
+        return sseEmitters.entrySet().stream()
+                .filter(entry -> entry.getKey().startsWith(memberId))
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+    }
+
+    public Map<String, Object> findAllEventCachesByMemberId(String memberId){
+        return eventCache.entrySet().stream()
+                .filter(entry -> entry.getKey().startsWith(memberId))
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+    }
+
+    public void deleteById(String emitterId){
+        sseEmitters.remove(emitterId);
+    }
+}

@@ -1,3 +1,50 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0c74f281414994e126909c3bc4c08195c99bcf04d9ac55100811b209bdbc0d08
-size 1082
+{
+  "background_color": "#d4eaf2",
+  "description": "Muchung Company에 오신 것을 환영합니다",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "Muchung",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "Muchung",
+  "start_url": "/",
+  "theme_color": "#d4eaf2",
+  "screenshots": [
+    {
+      "src": "/screenshots/desktop-screenshot.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "purpose": "any",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/screenshots/mobile-screenshot.png",
+      "sizes": "320x568",
+      "type": "image/png",
+      "purpose": "any",
+      "form_factor": "narrow"
+    }
+  ],
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a3f166189c5fff6166da71675e857bfde00fc59560d5b60931d15d81461466e0
-size 625
+package ssafy.muchung.department.entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import ssafy.muchung.global.entity.BaseTimeEntity;
+
+@Entity
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+public class Department extends BaseTimeEntity {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+
+	@Column(nullable = false)
+	private String name;
+}

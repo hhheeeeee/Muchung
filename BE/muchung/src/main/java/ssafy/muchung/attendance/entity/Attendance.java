@@ -1,3 +1,41 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5d2f6deae11808cfb62f1ba203d63eeb02a7db51a219e3473ded5062e4fc4409
-size 910
+package ssafy.muchung.attendance.entity;
+
+import java.time.LocalDateTime;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import ssafy.muchung.global.entity.BaseTimeEntity;
+import ssafy.muchung.member.entity.Member;
+
+@Entity
+@Getter
+@Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class Attendance extends BaseTimeEntity {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+
+	@ManyToOne
+	@JoinColumn(name = "member_id")
+	private Member member;
+
+	@Column
+	private LocalDateTime startTime;
+
+	@Column
+	private LocalDateTime endTime;
+}
